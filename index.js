@@ -21,11 +21,11 @@ app.get('/info', (req, res, next) => {
  });
 
  // Proxy endpoints
-app.use('/getproducts', createProxyMiddleware({
+app.use('/', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
     pathRewrite: {
-        [`^/getproducts`]: '',
+        [`^/`]: '',
     },
  }));
 
