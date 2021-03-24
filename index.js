@@ -7,7 +7,7 @@ const app = express();
 
 // Configuration
 const PORT = 3000;
-const HOST = "localhost";
+const HOST = "https://proxyserverbrp.herokuapp.com";
 const API_SERVICE_URL = "http://brpsoft.co.uk/services2/products";
 
 // Logging
