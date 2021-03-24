@@ -6,10 +6,10 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 
 // Configuration
-const PORT = 3000;
+const PORT = 80;
 
-const HOST = "proxyserverbrp.herokuapp.com";
-//const HOST = "localhost";
+//const HOST = "proxyserverbrp.herokuapp.com";
+const HOST = "localhost";
 const API_SERVICE_URL = "http://brpsoft.co.uk/services2/products";
 
 // Logging
@@ -19,15 +19,6 @@ app.use(morgan('dev'));
 app.get('/info', (req, res, next) => {
     res.send('This is a proxy service which proxies to Billing and Account APIs.');
  });
-
- // Authorization
-// app.use('', (req, res, next) => {
-//     if (req.headers.authorization) {
-//         next();
-//     } else {
-//         res.sendStatus(403);
-//     }
-// });
 
  // Proxy endpoints
 app.use('/getproducts', createProxyMiddleware({
